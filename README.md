@@ -32,21 +32,20 @@ This project has four 3rd-party dependencies:
 * [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 	
 I have placed the first two in 3rdparty/ (in the case of GeometricTools, what I have included is actually a small, modified subset of the original code).
-However, Boost and Eigen are not included with this project's source ; you must see  to it that CMake can find these two dependencies on your system (via find_package). 
+However, Boost and Eigen are not included with this project's source; you must see  to it that CMake can find these two dependencies on your system (via find_package). 
 
-Handling Boost is easy: you do not need to fully install it. If desired you can simply download 
-the Boost source, extract it to some directory, and set the Boost_INCLUDE_DIR CMake cache variable to point 
-to that directory (specifically, to the directory containing boost/, doc/, libs/, tools/, and so on). 
+Handling Boost is easy: you do not need to fully install it. Just download 
+the Boost source, extract it to a directory, and set the Boost_INCLUDE_DIR CMake cache variable to point 
+to the extracted source (specifically, to the directory containing boost/, doc/, libs/, tools/, and so on). 
 
 Eigen, however, needs to be fully installed on your system in order for this project's CMake 
 code to locate it. To install Eigen, run CMake on the Eigen source code to create a build system, build all,
 and finally build the INSTALL target. If you are using Visual Studio on Windows, make sure to run Visual
-Studio as administrator. The result of building the INSTALL target will be to create files at a CMake-known
-location: C:/Program Files (x86)/Eigen3/ in my case. The share/ folder will contain files that let
+Studio as administrator. The result of building the INSTALL target will be the creation of files at a CMake-known
+system location: C:/Program Files (x86)/Eigen3/ in my case. The share/ folder at this location will contain files that let
 my CMake code set up the proper connections to Eigen code. Note that the first time I tried to install 
-Eigen, the share/ subdirectory did not appear, just include/. When I retried the process--creating a whole
-new Eigen.sln using CMake and then building the INSTALL target again--I saw the share/ folder 
-appear.
+Eigen, the share/ subdirectory did not appear, only include/. When I retried the process--creating a new Eigen.sln using CMake and then building the INSTALL 
+target again--I saw the share/ folder appear.
 
 ## License
 					
