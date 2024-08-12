@@ -1,0 +1,61 @@
+									
+									 Mashup Drawings Demo 
+									  by Greg Philbrick
+									   Copyright 2024
+							
+
+							
+										DESCRIPTION	
+
+This demonstrates my algorithm for "mashing up" two drawings, i.e., creating a "mashup
+drawing" from two input drawings. Here, a "drawing" is a collection of strokes, each comprising
+a path curve and a width curve (Core/model/stroke.h). To understand how the mashup process works,
+imagine starting out with two input drawings superimposed on top of each other. The task is to 
+create an output drawing that captures both input drawings, which sometimes involves smoothly 
+joining Drawing A strokes with Drawing B strokes and sometimes involves having Drawing A strokes 
+taper off and yield to Drawing B strokes (or vice versa). 
+
+To see the mashup algorithm in action, run the MashupDemo executable. This goes through a few 
+different scenarios. For each scenario, it outputs SCENARIONAME_inputs.eps and 
+SCENARIONAME_mashup.eps (at the run-from location). These are Encapsulated PostScript files: 
+vector graphics files that can be viewed in Illustrator or Inkscape. The former shows the two 
+input drawings--Drawing A in red and Drawing B in blue. The latter shows the mashup drawing created
+by the algorithm.
+
+If you just want to scan the code for an understanding of the algorithm, go to Mashup/blendrawings.h 
+and study the BlendDrawings constructor and BlendDrawings::perform().
+
+							HOW TO BUILD / 3RD-PARTY DEPENDENCIES
+
+This project has four 3rd-party dependencies:
+
+	(1) Clipper2 (https://angusj.com/clipper2/Docs/Overview.htm)
+	
+	(2) GeometricTools (https://www.geometrictools.com/)
+
+	(3) Boost (https://www.boost.org/)		
+	
+	(4) Eigen (https://eigen.tuxfamily.org/index.php?title=Main_Page)
+	
+I have placed the first two in 3rdparty/. However, Boost and Eigen are not included; you must see 
+to it that CMake can find these two dependencies on your system (via find_package). 
+
+Handling Boost is easy: you do not need to fully install it. If desired you can simply download 
+the Boost source, extract it to some directory, and set the Boost_Source_Dir CMake cache variable to point 
+to that directory (specifically, to the directory containing boost/, doc/, libs/, tools/, and so on). 
+
+Eigen, however, needs to be fully installed on your system in order for this project's CMake 
+code to locate it. To install Eigen, run CMake on the Eigen source code to create a build system, build all,
+and finally build the INSTALL target. If you are using Visual Studio on Windows, make sure to run Visual
+Studio as administrator. The result of building the INSTALL target will be to create files at a CMake-known
+location: C:/Program Files (x86)/Eigen3/ in my case. The share/ folder will contain files that let
+my CMake code set up the proper connections to Eigen code. Note that the first time I tried to install 
+Eigen, the share/ subdirectory did not appear, just include/. When I retried the process--creating a whole
+new Eigen.sln using CMake and then building the INSTALL target again--I saw the share/ folder 
+appear.
+
+										LICENSE
+					
+My own code--everything outside of 3rdparty/--is subject to the Boost Software License v1.0. See 
+LICENSE.txt. Clipper2 (3rdparty/Clipper2Lib/) and GeometricTools (3rdparty/GeometricTools/) are also 
+subject to the Boost Software License v1.0.
