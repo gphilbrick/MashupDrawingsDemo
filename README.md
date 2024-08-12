@@ -35,7 +35,7 @@ I have placed the first two in 3rdparty/. However, Boost and Eigen are not inclu
 to it that CMake can find these two dependencies on your system (via find_package). 
 
 Handling Boost is easy: you do not need to fully install it. If desired you can simply download 
-the Boost source, extract it to some directory, and set the Boost_Source_Dir CMake cache variable to point 
+the Boost source, extract it to some directory, and set the Boost_INCLUDE_DIR CMake cache variable to point 
 to that directory (specifically, to the directory containing boost/, doc/, libs/, tools/, and so on). 
 
 Eigen, however, needs to be fully installed on your system in order for this project's CMake 
