@@ -31,8 +31,8 @@ This project has four 3rd-party dependencies:
 * [Boost](https://www.boost.org/)		
 * [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 	
-I have placed the first two in 3rdparty/. However, Boost and Eigen are not included; you must see 
-to it that CMake can find these two dependencies on your system (via find_package). 
+I have placed the first two in 3rdparty/ (in the case of GeometricTools, what I have included is actually a small, modified subset of the original code).
+However, Boost and Eigen are not included with this project's source ; you must see  to it that CMake can find these two dependencies on your system (via find_package). 
 
 Handling Boost is easy: you do not need to fully install it. If desired you can simply download 
 the Boost source, extract it to some directory, and set the Boost_INCLUDE_DIR CMake cache variable to point 
