@@ -1,11 +1,8 @@
 									
-									 Mashup Drawings Demo 
-									  by Greg Philbrick
-									   Copyright 2024
-							
-
-							
-										DESCRIPTION	
+# Mashup Drawings Demo 
+by Greg Philbrick (Copyright 2024)
+													
+## Description	
 
 This demonstrates my algorithm for "mashing up" two drawings, i.e., creating a "mashup
 drawing" from two input drawings. Here, a "drawing" is a collection of strokes, each comprising
@@ -25,17 +22,14 @@ by the algorithm.
 If you just want to scan the code for an understanding of the algorithm, go to Mashup/blendrawings.h 
 and study the BlendDrawings constructor and BlendDrawings::perform().
 
-							HOW TO BUILD / 3RD-PARTY DEPENDENCIES
+## How to Build / 3rd-Party Dependencies
 
 This project has four 3rd-party dependencies:
 
-	(1) Clipper2 (https://angusj.com/clipper2/Docs/Overview.htm)
-	
-	(2) GeometricTools (https://www.geometrictools.com/)
-
-	(3) Boost (https://www.boost.org/)		
-	
-	(4) Eigen (https://eigen.tuxfamily.org/index.php?title=Main_Page)
+* [Clipper2](https://angusj.com/clipper2/Docs/Overview.htm)	
+* [GeometricTools](https://www.geometrictools.com/)
+* [Boost](https://www.boost.org/)		
+* [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 	
 I have placed the first two in 3rdparty/. However, Boost and Eigen are not included; you must see 
 to it that CMake can find these two dependencies on your system (via find_package). 
@@ -54,7 +48,7 @@ Eigen, the share/ subdirectory did not appear, just include/. When I retried the
 new Eigen.sln using CMake and then building the INSTALL target again--I saw the share/ folder 
 appear.
 
-										LICENSE
+## License
 					
 My own code--everything outside of 3rdparty/--is subject to the Boost Software License v1.0. See 
 LICENSE.txt. Clipper2 (3rdparty/Clipper2Lib/) and GeometricTools (3rdparty/GeometricTools/) are also 
