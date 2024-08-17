@@ -1,5 +1,8 @@
 									
 # Mashup Drawings Demo 
+
+![beforeAfter.png](beforeAfter.png)
+
 by Greg Philbrick (Copyright 2024)
 													
 ## Description	
