@@ -13,7 +13,7 @@ RuntimeError::RuntimeError( const char* msg, const char* file, int line )
     _msg = ss.str();
 }
 
-const char* RuntimeError::what() const
+const char* RuntimeError::what() const noexcept
 {
     return _msg.c_str();
 }

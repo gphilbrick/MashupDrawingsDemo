@@ -10,6 +10,10 @@
 
 namespace mashup {
 
+WeightFunctor::~WeightFunctor()
+{
+}
+
 double WeightFunctor_WidthBased::weight( const Stroke& s, StrokeT t, const BlendDrawings& ) const
 {
     return s.width( t );

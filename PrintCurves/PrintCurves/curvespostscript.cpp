@@ -1,4 +1,4 @@
-#include <PrintCurves/CurvesPostScript.h>
+#include <PrintCurves/curvespostscript.h>
 
 #include <PrintCurves/miteredcurve.h>
 #include <PrintCurves/strokeproperties.h>

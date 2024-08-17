@@ -14,6 +14,7 @@ class WeightFunctor
 {
 public:
     using StrokeT = double;
+	virtual ~WeightFunctor();
     /// Return a >=0 weight associated with T='t' on original-drawing 'Stroke' 's'.
     virtual double weight( const Stroke& s, StrokeT t, const BlendDrawings& ) const = 0;
 };

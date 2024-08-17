@@ -12,7 +12,7 @@ class RuntimeError : public std::runtime_error
 {
 public:
     RuntimeError( const char* msg, const char* file, int line );
-    const char* what() const override;
+    const char* what() const noexcept override;
 private:
     std::string _msg;
 };

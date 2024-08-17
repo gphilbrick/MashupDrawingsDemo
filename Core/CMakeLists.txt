@@ -58,8 +58,6 @@ add_library( ${PROJECT_NAME}
     Core/utility/mathutility.h 
     Core/utility/polarinterval.cpp 
     Core/utility/polarinterval.h 
-    Core/utility/stopwatch.cpp 
-    Core/utility/stopwatch.h 
     Core/utility/twodarray.h 
     Core/utility/vector2.cpp 
     Core/utility/vector2.h 

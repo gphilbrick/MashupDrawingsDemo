@@ -16,7 +16,7 @@ class TwoDArray
 {
 public:
 
-    using Type = TwoDArray< typename T >;
+    using Type = TwoDArray< T >;
 
     explicit TwoDArray(int width=1, int height=1, T initialVal=T())
     {
