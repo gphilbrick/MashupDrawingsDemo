@@ -8,6 +8,7 @@
 #include <Core/exceptions/runtimeerror.h>
 #include <Core/model/curveback.h>
 
+#include <list>
 #include <set>
 
 namespace mashup {
